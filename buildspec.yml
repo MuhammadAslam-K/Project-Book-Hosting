@@ -18,7 +18,7 @@ phases:
 
   post_build:
     commands:
-      - echo "Current directory: $(pwd)"
+      - echo "the post build phase. navigating back to root path"
       - cp -R build/ ../
 
 artifacts:
