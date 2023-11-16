@@ -10,4 +10,4 @@ async function connect(mongoURL: string) {
     }
 }
 
-export default connect;
+export default connect
