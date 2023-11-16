@@ -19,9 +19,7 @@ phases:
   post_build:
     commands:
       - echo "Current directory: $(pwd)"
-      - ls -al
-      - ls -al dist/
-      - cp -R dist/ ../
+      - cp -R build/ ../
 
 artifacts:
   files:
