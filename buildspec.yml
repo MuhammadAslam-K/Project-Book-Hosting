@@ -23,9 +23,9 @@ phases:
 
 artifacts:
   files:
-    - /dist/**/*
+    - dist/**/*
     - appspec.yml
-    - Bookat-server/**/*
+    - server/**/*
     - nginx/*
     - scripts/*
     - docker-compose.yaml
