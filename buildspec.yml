@@ -28,5 +28,5 @@ artifacts:
     - server/**/*
     - nginx/*
     - scripts/*
-    - docker-compose.yaml
+    - docker-compose.yml
     - Dockerfile
