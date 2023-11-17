@@ -19,11 +19,11 @@ phases:
   post_build:
     commands:
       - echo "the post build phase. navigating back to root path"
-      - cp -R dist/ ../
+      - cp -R build/ ../
 
 artifacts:
   files:
-    - /dist/**/*
+    - /build/**/*
     - appspec.yml
     - Bookat-server/**/*
     - nginx/*
