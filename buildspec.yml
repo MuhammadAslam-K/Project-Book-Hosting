@@ -4,26 +4,9 @@ phases:
   install:
     commands:
       - echo "the installation phase begins"
-  pre_build:
-    commands:
-      - echo "the prebuild phase begins"
-      - cd client
-      - npm install --legacy-peer-deps
-  build:
-    commands:
-      - echo "the build phase begins"
-      # - echo `pwd`
-      - npm run build
-      - ls -la
-
-  post_build:
-    commands:
-      - echo "the post build phase. navigating back to root path"
-      - cp -R dist/ ../
 
 artifacts:
   files:
-    - dist/**/*
     - appspec.yml
     - server/**/*
     - nginx/*
