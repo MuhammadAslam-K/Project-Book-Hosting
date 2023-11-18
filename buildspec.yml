@@ -1,6 +1,21 @@
-#vi buildspec.yml
 version: 0.2
+
 phases:
+  pre_build:
+    commands:
+      - echo "the pre_build phase begins"
+      - export PORT=$PORT
+      - export SOCKET_PORT=$SOCKET_PORT
+      - export FRONT_END=$FRONT_END
+      - export MONGO_URL=$MONGO_URL
+      - export SECRET_KEY=$SECRET_KEY
+      - export TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID
+      - export TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN
+      - export TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID
+      - export NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL
+      - export NODEMAILER_PASS=$NODEMAILER_PASS
+      - printenv
+
   install:
     commands:
       - echo "the installation phase begins"
