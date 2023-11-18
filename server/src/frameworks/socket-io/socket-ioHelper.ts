@@ -31,4 +31,4 @@ export const calculateDistance = (
         return distance
     }
     return -10
-};
+}
