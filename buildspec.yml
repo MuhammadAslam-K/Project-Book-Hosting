@@ -4,16 +4,16 @@ phases:
   pre_build:
     commands:
       - echo "the pre_build phase begins"
-      - export PORT=$PORT
-      - export SOCKET_PORT=$SOCKET_PORT
-      - export FRONT_END=$FRONT_END
-      - export MONGO_URL=$MONGO_URL
-      - export SECRET_KEY=$SECRET_KEY
-      - export TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID
-      - export TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN
-      - export TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID
-      - export NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL
-      - export NODEMAILER_PASS=$NODEMAILER_PASS
+      - echo "PORT=$PORT" > server/.env
+      - echo "SOCKET_PORT=$SOCKET_PORT" >> server/.env
+      - echo "FRONT_END=$FRONT_END" >> server/.env
+      - echo "MONGO_URL=$MONGO_URL" >> server/.env
+      - echo "SECRET_KEY=$SECRET_KEY" >> server/.env
+      - echo "TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID" >> server/.env
+      - echo "TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN" >> server/.env
+      - echo "TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID" >> server/.env
+      - echo "NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL" >> server/.env
+      - echo "NODEMAILER_PASS=$NODEMAILER_PASS" >> server/.env
 
   build:
     commands:
