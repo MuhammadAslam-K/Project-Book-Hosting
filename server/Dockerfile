@@ -19,7 +19,18 @@ RUN npm run build
 # Expose the port for Node.js
 EXPOSE 8001
 
-# Create the .env file with environment variables
+# Create the .env file with build arguments
+ARG PORT
+ARG SOCKET_PORT
+ARG FRONT_END
+ARG MONGO_URL
+ARG SECRET_KEY
+ARG TWILIO_ACCOUNT_SID
+ARG TWILIO_AUTH_TOKEN
+ARG TWILIO_VERIFY_SID
+ARG NODEMAILER_USER_EMAIL
+ARG NODEMAILER_PASS
+
 RUN echo "PORT=$PORT" > .env \
     && echo "SOCKET_PORT=$SOCKET_PORT" >> .env \
     && echo "FRONT_END=$FRONT_END" >> .env \

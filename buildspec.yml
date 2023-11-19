@@ -14,7 +14,7 @@ phases:
       - export TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID
       - export NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL
       - export NODEMAILER_PASS=$NODEMAILER_PASS
-      - printenv
+      - cat .env
 
   install:
     commands:
@@ -28,3 +28,4 @@ artifacts:
     - scripts/*
     - docker-compose.yml
     - Dockerfile
+    - .env
