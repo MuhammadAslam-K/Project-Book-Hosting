@@ -31,3 +31,4 @@ artifacts:
     - scripts/*
     - docker-compose.yml
     - Dockerfile
+    - .env
