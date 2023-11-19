@@ -43,4 +43,4 @@ RUN echo "PORT=$PORT" > .env \
     && echo "NODEMAILER_PASS=$NODEMAILER_PASS" >> .env
 
 # Define the command to run your application
-CMD ["npm", "start", "dev"]
+CMD ["sh", "-c", "echo PORT=$PORT > .env && echo SOCKET_PORT=$SOCKET_PORT >> .env && echo FRONT_END=$FRONT_END >> .env && echo MONGO_URL=$MONGO_URL >> .env && echo SECRET_KEY=$SECRET_KEY >> .env && echo TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID >> .env && echo TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN >> .env && echo TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID >> .env && echo NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL >> .env && echo NODEMAILER_PASS=$NODEMAILER_PASS >> .env && npm start dev"]
