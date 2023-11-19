@@ -14,6 +14,10 @@ phases:
       - export TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID
       - export NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL
       - export NODEMAILER_PASS=$NODEMAILER_PASS
+
+  build:
+    commands:
+      - echo "the build phase begins"
       - cat .env
 
   install:
