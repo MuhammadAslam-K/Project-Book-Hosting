@@ -18,7 +18,6 @@ phases:
   build:
     commands:
       - echo "the build phase begins"
-      - cat .env
 
   install:
     commands:
