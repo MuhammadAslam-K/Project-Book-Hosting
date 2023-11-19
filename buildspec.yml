@@ -26,9 +26,9 @@ phases:
 artifacts:
   files:
     - appspec.yml
+    - server/.env
     - server/**/*
     - nginx/*
     - scripts/*
     - docker-compose.yml
     - Dockerfile
-    - .env
