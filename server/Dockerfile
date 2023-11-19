@@ -19,5 +19,8 @@ RUN npm run build
 # Expose the port for Node.js
 EXPOSE 8001
 
+# Copy .env file
+COPY .env .env
+
 # Define the command to run your application
 CMD ["npm", "start","dev"]

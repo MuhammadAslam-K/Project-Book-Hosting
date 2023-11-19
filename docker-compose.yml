@@ -24,6 +24,8 @@ services:
       - "8000:8000"
     links:
       - mongo_db
+    volumes:
+      - ./server/.env:/app/.env
 
   mongo_db:
     container_name: mongo_db
