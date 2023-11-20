@@ -30,4 +30,4 @@ CMD echo "PORT=$PORT" > .env \
     && echo "TWILIO_VERIFY_SID=$TWILIO_VERIFY_SID" >> .env \
     && echo "NODEMAILER_USER_EMAIL=$NODEMAILER_USER_EMAIL" >> .env \
     && echo "NODEMAILER_PASS=$NODEMAILER_PASS" >> .env \
-    && npm start dev
+    && npm start
