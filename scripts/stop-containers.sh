@@ -5,11 +5,11 @@ DEPLOY_DIR="/home/bookat/devopspipeline"
 cd "$DEPLOY_DIR"
 
 # Check if the 'build' directory exists
-if [ -d "build" ]; then
-    # Copy the contents of the 'build' directory to 'nginx'
-    sudo cp -r build/* nginx
+if [ -d "server" ]; then
+    # Copy the contents of the 'server' directory to 'nginx'
+    sudo cp -r server/* nginx
 else
-    echo "The 'build' directory does not exist. No copying performed."
+    echo "The 'server' directory does not exist. No copying performed."
 fi
 
 # Check if Docker is not running, then start Docker
