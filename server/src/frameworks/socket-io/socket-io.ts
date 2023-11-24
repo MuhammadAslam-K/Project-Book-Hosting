@@ -22,14 +22,14 @@ let fromLocationLong: string
 let toLocationLat: string
 let toLocationLong: string
 
-// / / / / /DRIVER / / / / / 
+// / / / / /DRIVER / / /
 let driverLatitude: string
 let driverLongitude: string
 let driverId: ObjectId
 let driverVehicleType: string
 
-export const setUpSocketIO = (): void => {
-    const io: SocketIOServer = new SocketIOServer(8000, {
+export const setUpSocketIO = (server: any): void => {
+    const io: SocketIOServer = new SocketIOServer(server, {
         cors: {
             origin: "*",
             credentials: true
@@ -47,14 +47,14 @@ export const setUpSocketIO = (): void => {
         socket.on("confirmRide", (data) => {
             console.log("ride confirm", data)
 
-            userLat = data.userLat;
-            userLon = data.userLon;
-            userVehicleType = data.userVehicleType;
+            userLat = data.latitude;
+            userLon = data.longitude;
+            userVehicleType = data.vehicle;
             userId = data.userId;
-            userFromLocation = data.userFromLocation;
-            userToLocation = data.userToLocation;
+            userFromLocation = data.fromLocation;
+            userToLocation = data.toLocation;
             amount = data.amount;
-            rideDistance = data.rideDistance;
+            rideDistance = data.distance;
             rideDuration = data.rideDuration;
             fromLocationLat = data.fromLocationLat;
             fromLocationLong = data.fromLocationLong;
@@ -82,7 +82,6 @@ export const setUpSocketIO = (): void => {
                 parseFloat(driverLongitude),
                 driverVehicleType,
             );
-
             console.log("distance user and driver vehicle type :", distance, userVehicleType, driverVehicleType)
             // if (distance != false) {
             if (distance >= -2 && !processedDriverIds.has(driverId)) {
@@ -101,7 +100,7 @@ export const setUpSocketIO = (): void => {
         const emitNearbyDrivers = () => {
             if (nearbyDriver.length > 0) {
                 const driverData = nearbyDriver.shift();
-                // console.log("driver data", driverData)
+                console.log("driver data", driverData)
                 console.log("send Requist to driver")
                 io.emit('getDriverConfirmation', driverData);
                 processedDriverIds.delete(driverData?.driverId);
@@ -188,8 +187,8 @@ export const setUpSocketIO = (): void => {
         socket.on("update-chat-message", async (data) => {
             console.log("update-chat-message", data)
             const result = await chatUseCase.saveChat(data)
+            io.emit("chat-message", result?.messages, data.rideId)
         })
-
 
 
     });
